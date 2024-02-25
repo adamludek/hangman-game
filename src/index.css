@@ -1,20 +1,23 @@
 @font-face {
   font-family: MouseMemoirs;
-  src: url('./assets/fonts/MouseMemoirs-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/MouseMemoirs-Regular.ttf');
 }
 
 :root {
   --color-dark-navy: #261676;
   --color-blue: #2463FF;
-
-  font-family: MouseMemoirs, sans-serif;
-  font-size: 10px;
+  --color-font-gradient: #67B6FF;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  font-family: MouseMemoirs, sans-serif;
+  font-size: 10px;
 }
 
 body {
@@ -24,13 +27,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-width: 375px;
+  min-height: 812px;
+  color: white;
 }
 
 .App {
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .start {
@@ -50,19 +53,19 @@ body {
   transform: translateY(-50%);
 }
 
-.btn-play {
-  background: linear-gradient(to bottom, #FE71FE, #7199FF);
+.btn {
+  display: block;
+  font-family: inherit;
+  background: #2463FF;
   position: relative;
   cursor: pointer;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  border-left: 5px solid #9D2DF5;
-  border-right: 5px solid #9D2DF5;
-  border-bottom: 15px solid #9D2DF5;
+  width: 260px;
+  height: 62px;
+  border-radius: 40px;
+  color: inherit;
 }
 
-.btn-play::after {
+.btn::after {
   display: block;
   content: "";
   position: absolute;
@@ -75,13 +78,105 @@ body {
   opacity: 0;
 }
 
-.btn-play:hover::after {
+.btn:hover::after {
   opacity: .25;
 }
+
+.btn-play {
+  background: linear-gradient(to bottom, #FE71FE, #7199FF);
+  width: 160px;
+  height: 160px;
+  border-left: 5px solid #9D2DF5;
+  border-right: 5px solid #9D2DF5;
+  border-bottom: 15px solid #9D2DF5;
+  border-radius: 50%;
+}
+
+.btn-guide {
+  margin-top: 60px;
+  font-size: 38px;
+  border-left: 5px solid #3b74ff;
+  border-right: 5px solid #3b74ff;
+  border-top: 10px solid #3b74ff;
+}
+
+.btn-guide::after {
+  border-radius: 40px;
+}
+
+.guide {
+  background: rgba(26, 4, 58, 0.75);
+  display: flex;
+  gap: 80px;
+  flex-direction: column;
+  align-items: center;
+  width: 375px;
+  height: 812px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 324px;
+  font-size: 4.8rem;
+  background: linear-gradient(to bottom, var(--color-font-gradient), white);
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-header {
+  background: linear-gradient(to bottom, #FE71FE, #7199FF);
+  align-self: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.btn-header img {
+  height: 80%;
+  width: 80%;
+}
+.stages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 324px;
+  height: 185px;
+  padding: 32px;
+  background-color: white;
+  font-size: 1.6rem;
+  border-radius: 20px;
+}
+
+.stage header {
+  display: flex;
+  padding-left: 32px;
+  gap: 16px;
+  justify-content: flex-start;
+  font-size: 24px;
+  color: var(--color-blue);
+}
+
+.stage h6 {
+  color: var(--color-dark-navy);
+}
+
+.stage main {
+  color: #887DC0;
+}
+
 @media(min-width: 768px) {
 body {
   background-image: url("assets/images/background-tablet.svg");
   min-width: 768px;
+  max-height: 1024px;
 }
 
 .start {
@@ -93,11 +188,76 @@ body {
   width: 374px;
   height: 185px;
 }
+.guide {
+  min-height: 1024px;
+  width: 768px;
+  gap: 100px;
+}
+header {
+  width: 600px;
+  font-size: 8.0rem;
+}
+.btn-header {
+  width: 94px;
+  height: 94px;
+}
+
+.stages-container {
+  gap: 32px;
+}
+
+.stage {
+  width: 600px;
+  height: 200px;
+  font-size: 2rem;
+}
+
+.stage header {
+  font-size: 4rem;
+}
+
 }
 
 @media(min-width: 1440px) {
   body {
     background-image: url("assets/images/background-desktop.svg");
-    max-width: 1440px;
+    height: 1024px;
+    min-width: 1440px;
+  }
+  .start {
+    width: 592px;
+    height: 610px;
+  }
+
+  .btn-guide {
+    margin-top: 145px;
+  }
+
+  .guide {
+    width: 1440px;
+  }
+  header {
+    width: 1212px;
+    line-height: 16rem;
+    font-size: 9.5rem;
+  }
+
+  .stages-container {
+    flex-direction: row;
+  }
+
+  .stage {
+    width: 384px;
+    height: 550px;
+    font-size: 2.6rem;
+  }
+
+  .stage header {
+    flex-direction: column;
+    font-size: 4.8rem;
+  }
+
+  .stage header p {
+    font-size: 8.8rem;
   }
   }
