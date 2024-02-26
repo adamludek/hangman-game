@@ -1,4 +1,5 @@
 import GameStage from "./GameStage"
+import ScreenHeader from "./ScreenHeader"
 import iconBack from "./assets/images/icon-back.svg"
 
 const gameStages = [
@@ -15,10 +16,9 @@ the word, you lose.`}
 export default function GuideScreen({dispatch}) {
   return (
     <div className="guide">
-      <header>
-        <button className="btn btn-header" onClick={() => dispatch({type: "backToMainMenu"})}><img src={iconBack} alt="Back to Menu"/></button>
-        <h2> How to Play</h2>
-      </header>
+      <ScreenHeader dispatch={dispatch} icon={iconBack} action={{type: "backToMainMenu"}}>
+        How to Play
+      </ScreenHeader>
       <div className="stages-container">
       {gameStages.map((stage, index) => <GameStage key={stage.stage} stage={stage} index={index} />)}</div>
       </div>

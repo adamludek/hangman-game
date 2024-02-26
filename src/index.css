@@ -56,7 +56,7 @@ body {
 .btn {
   display: block;
   font-family: inherit;
-  background: #2463FF;
+  background: var(--color-blue);
   position: relative;
   cursor: pointer;
   width: 260px;
@@ -117,9 +117,9 @@ body {
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 324px;
-  font-size: 4.8rem;
+  font-size: 4.2rem;
   background: linear-gradient(to bottom, var(--color-font-gradient), white);
   background-clip: text;
   color: transparent;
@@ -127,7 +127,6 @@ header {
 
 .btn-header {
   background: linear-gradient(to bottom, #FE71FE, #7199FF);
-  align-self: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -137,11 +136,13 @@ header {
   height: 80%;
   width: 80%;
 }
+
 .stages-container {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+
 .stage {
   display: flex;
   flex-direction: column;
@@ -160,7 +161,7 @@ header {
   padding-left: 32px;
   gap: 16px;
   justify-content: flex-start;
-  font-size: 24px;
+  font-size: 2.4rem;
   color: var(--color-blue);
 }
 
@@ -170,6 +171,26 @@ header {
 
 .stage main {
   color: #887DC0;
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+  width: 324px;
+  gap: 16px;
+}
+
+.btn-category {
+  width: 100%;
+  height: 77px;
+  border-left: 3px solid #3b74ff;
+  border-right: 3px solid #3b74ff;
+  border-top: 8px solid #3b74ff;
+  font-size: 2.4rem;
+}
+
+.btn-category::after {
+  border-radius: 40px;
 }
 
 @media(min-width: 768px) {
@@ -196,10 +217,11 @@ body {
 header {
   width: 600px;
   font-size: 8.0rem;
+  justify-content: space-between;
 }
 .btn-header {
-  width: 94px;
-  height: 94px;
+  width: 64px;
+  height: 64px;
 }
 
 .stages-container {
@@ -216,6 +238,18 @@ header {
   font-size: 4rem;
 }
 
+.categories-container {
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 680px;
+  gap: 32px;
+}
+
+.btn-category {
+  width: 324px;
+  height: 182px;
+  font-size: 4.8rem;
+}
 }
 
 @media(min-width: 1440px) {
@@ -237,9 +271,16 @@ header {
     width: 1440px;
   }
   header {
+    justify-content: flex-start;
+    gap: 288px;
     width: 1212px;
     line-height: 16rem;
-    font-size: 9.5rem;
+    font-size: 10.4rem;
+  }
+
+  .btn-header {
+    width: 94px;
+    height: 94px;
   }
 
   .stages-container {
@@ -259,5 +300,15 @@ header {
 
   .stage header p {
     font-size: 8.8rem;
+  }
+
+  .categories-container {
+    width: 1218px;
+    height: 430px;
+  }
+
+  .btn-category {
+    width: 384px;
+    height: 190px;
   }
   }
