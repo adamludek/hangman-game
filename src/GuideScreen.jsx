@@ -17,7 +17,7 @@ export default function GuideScreen({dispatch}) {
   return (
     <div className="guide">
       <ScreenHeader dispatch={dispatch} icon={iconBack} action={{type: "backToMainMenu"}}>
-        How to Play
+        <h2>How to Play</h2>
       </ScreenHeader>
       <div className="stages-container">
       {gameStages.map((stage, index) => <GameStage key={stage.stage} stage={stage} index={index} />)}</div>
