@@ -7,7 +7,9 @@ Use useReducer to state management.
 Local API from JSON file using json-server 
 
 1: Download/clone repo 
+
 2:
+
 `npm install`
 
 `npm run server`
