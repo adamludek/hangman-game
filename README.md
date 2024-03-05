@@ -4,7 +4,10 @@ Stack: HTML5, CSS3, JS, React
 
 React env in Vite.
 Use useReducer to state management.
+
 Local API from JSON file using json-server 
+
+Design based on layout in Figma from [Frontend Mentor](https://www.frontendmentor.io/challenges/hangman-game-rsQiSVLGWn) 
 
 1: Download/clone repo 
 
