@@ -1,8 +1,15 @@
-# React + Vite
+# Hangman Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Stack: HTML5, CSS3, JS, React
 
-Currently, two official plugins are available:
+React env in Vite.
+Use useReducer to state management.
+Local API from JSON file using json-server 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1: Download/clone repo 
+2:
+`npm install
+npm run server
+npm run dev`)
+
+URL: `http://localhost:5173/`
