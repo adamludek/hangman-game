@@ -2,6 +2,8 @@
 
 Stack: HTML5, CSS3, JS, React
 
+Mobile first design using Flexbox. 
+
 React env in Vite.
 Use useReducer to state management.
 
