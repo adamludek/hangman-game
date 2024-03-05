@@ -71,7 +71,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 50%;
+  border-radius: 40px;
   background: white;
   width: 100%;
   height: 100%;
@@ -89,6 +89,10 @@ body {
   border-left: 5px solid #9D2DF5;
   border-right: 5px solid #9D2DF5;
   border-bottom: 15px solid #9D2DF5;
+  border-radius: 50%;
+}
+
+.btn-play::after {
   border-radius: 50%;
 }
 
@@ -189,12 +193,10 @@ header {
   font-size: 2.4rem;
 }
 
-.btn-category::after {
-  border-radius: 40px;
-}
-
 .keys-container {
   margin-top: 240px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -251,6 +253,7 @@ header {
 
 progress {
   -webkit-appearance: none;
+  appearance: none;
   width: 57px;
   height: 16px;
 }
@@ -274,30 +277,102 @@ progress {
 .words-container {
   display: flex;
   flex-wrap: wrap;
+  margin-left: 40px;
   gap: 24px;
-  width: 324px;
+  width: 375px;
   height: 144px;
 }
 
 .words-container div {
   display: flex;
   gap: 8px;
+  justify-content: center;
+  align-items: center;
 }
 
 .letter {
   background: var(--color-blue);
-  width: 30px;
+  width: 24px;
   height: 40px;
   border-radius: 12px;
   border-top: 7px solid #3B74FF;
   border-right: 4px solid #3B74FF;
   border-left: 4px solid #3B74FF;
-
 }
 
 .in-game .btn:disabled,
 .disabled {
   opacity: .25;
+}
+
+.menu-bg {
+  position: absolute;
+  background: linear-gradient(to bottom, rgba(26,4, 58, .2), rgba(38, 22,118, .2));
+  display: flex;
+  z-index: 1;
+  width: 375px;
+  height: 812px;
+}
+
+.menu {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(52,74,186, .9), rgba(0,20,121, .9));
+  width: 324px;
+  height: 445px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  border-radius: 48px;
+  border-top: 12px solid var(--color-blue);
+  border-right: 2px solid var(--color-blue);
+  border-left: 2px solid var(--color-blue);
+  border-bottom: 12px solid #243041
+}
+
+.menu header {
+  transform: translateY(-60%);
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.menu header h2 {
+ font-size: 9.4rem;
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  width: 275px;
+  height: 254px;
+  font-size: 4.2rem;
+}
+
+.btn-pause-normal {
+  width: 228px;
+  height: 62px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3.2rem;
+  text-transform: uppercase;
+  border-top: 8px solid #3b74ff;
+  border-left: 3px solid #3b74ff;
+  border-right: 3px solid #3b74ff;
+
+
+}
+
+.btn-long {
+  width: 275px;
+}
+
+.btn-pause-gradient {
+  background: linear-gradient(to bottom, #FE71FE, #7199FF);
+  border-color: #c642fb;
 }
 
 @media(min-width: 768px) {
@@ -395,11 +470,33 @@ progress {
 }
 
 .letter {
-  width: 70px;
+  width: 60px;
   height: 112px;
+  border-radius: 40px;
   font-size: 6.4rem;
 }
 
+.words-contaner {
+  width: 700px;
+}
+
+.words-container div {
+  gap: 16px;
+}
+
+.menu-bg {
+  width: 768px;
+  height: 1024px;
+}
+
+.menu {
+  width: 592px;
+  border-radius: 72px;
+}
+
+.menu header h2 {
+  font-size: 10.4rem;
+}
 }
 
 @media(min-width: 1440px) {
@@ -484,7 +581,21 @@ progress {
 
   .letter {
     width: 112px;
-    height: 128px;
+    height: 108px;
     font-size: 8.8rem;
   }
+
+  .menu-bg {
+    width: 1440px;
+  }
+
+  .menu header h2 {
+    font-size: 13.4rem;
+  }
+
+  .words-container {
+    width: 1200px;
+    gap: 32px;
+  }
+
   }
